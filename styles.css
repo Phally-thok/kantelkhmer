@@ -1,0 +1,307 @@
+/* កំណត់ Font អក្សរខ្មែរ និងលុបគម្លាតដើមចោល */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Khmer OS Siemreap', 'Khmer OS Battambang', sans-serif;
+}
+
+body {
+    background-color: #d99333; /* ពណ៌លឿងទុំដូចក្នុងរូបភាព */
+    color: #000000;
+}
+
+/* --- រចនាបថរបារម៉ឺនុយ (Navbar) --- */
+/* --- រចនាបថរបារម៉ឺនុយ (Navbar) - កំណត់ឱ្យនៅនឹងថ្កល់ដដែល --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 80px;
+    
+    /* ផ្នែកសំខាន់៖ ធ្វើឱ្យ Navbar កកជាប់នៅខាងលើបង្អស់ */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* ធានាថា Navbar ស្ថិតនៅលើគេបង្អស់ មិនត្រូវរូបភាពបាំង */
+    
+    /* បន្ថែមពណ៌ផ្ទៃក្រោយបន្តិច ឬប្រើស្ទើរតែធ្លាយ ដើម្បីឱ្យមើលឃើញអក្សរច្បាស់ពេលអូសចុះក្រោម */
+    background-color: rgba(202, 215, 25, 0.725); /* ពណ៌លឿងទុំ ដិត ៩៥% */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* បន្ថែមស្រមោលតិចៗពីក្រោម */
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* ចន្លោះរវាងម៉ឺនុយនីមួយៗ */
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #9e2142;
+}
+
+/* ប៊ូតុង "ទិញឥឡូវ" នៅលើ Navbar */
+.navbar .btn-buy {
+    background-color: #000000;
+    color: #dfd6c9 !important; /* អក្សរពណ៌លឿងទុំវិញ */
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* --- រចនាបថផ្នែកកណ្ដាល (Hero Section) --- */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* ឱ្យផ្ទាំងនេះមានកម្ពស់ខ្ពស់ពេញអេក្រង់ */
+    text-align: center;
+    padding: 0 20px;
+    padding-top: 100px; /* បន្ថែមជួរនេះ ដើម្បីកុំឱ្យក្បាលទំព័រ (Navbar) ទៅបាំងអក្សរ "កន្ទេលផ្អាវ ដោយដៃ" */
+}
+
+.hero-content {
+    max-width: 800px; /* កំណត់ប្រវែងអត្ថបទកុំឱ្យរាយវែងពេក */
+}
+
+.hero-title {
+    font-size: 50px; /* អក្សរធំចំកណ្ដាល */
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 0px; /* លុបចន្លោះលើដើមចេញពី h1 */
+
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.8; /* ចន្លោះឃ្លាពីជួរមួយទៅជួរមួយ */
+    margin-bottom: 100px;
+    color: #111111;
+}
+
+/* ប៊ូតុង "មើលផលិតផល" ខាងក្រោម */
+.btn-explore {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #000000;
+    color: #d99333;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+/*------------------------------ផ្នែកទី ២-----------------------------*/
+.btn-explore:hover {
+    transform: scale(1.05); /* រីកធំបន្តិចពេលយកកណ្ដុរដាក់លើ */
+}
+/* --- រចនាបថផ្នែកបង្ហាញផលិតផលខាងក្រោម --- */
+        .products-section {
+            background-color: #ffffff; /* ផ្ទៃខាងក្រោយពណ៌សដើម្បីដាច់ពីផ្នែកលឿងខាងលើ */
+            padding: 80px 80px;
+            color: #000000;
+        }
+
+        /* រៀបចំប្លង់ក្បាលឱ្យចំណងជើងនៅឆ្វេង អត្ថបទនៅស្តាំ */
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            gap: 50px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            flex: 1; /* ឱ្យដណ្ដើមលំហពាក់កណ្ដាល */
+        }
+
+        .section-desc {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333333;
+            flex: 1; /* ឱ្យដណ្ដើមលំហពាក់កណ្ដាលស្មើគ្នា */
+            text-align: justify;
+        }
+
+        /* រៀបចំប្រអប់រូបភាពឱ្យរាយជា ៣ ជួរស្មើគ្នា */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* ចែកជា ៣ ជួរស្មើៗគ្នា */
+            gap: 50px; /* ចន្លោះរវាងរូបភាព */
+        }
+
+        .product-item {
+            width: 100%;
+            height: 250px; /* កំណត់កម្ពស់ប្រអប់រូបភាព */
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* កាត់តម្រឹមរូបភាពឱ្យសមល្មមប្រអប់ មិនឱ្យវៀច */
+            transition: transform 0.4s ease;
+        }
+
+        /* បែបផែនពង្រីករូបភាពបន្តិចពេលយកកណ្ដុរដាក់លើ */
+        .product-item:hover img {
+            transform: scale(1.03);
+        }
+
+        /* រៀបចំឱ្យអេក្រង់ទូរស័ព្ទរត់ចុះក្រោមជាជួរឈរទោលស្វ័យប្រវត្តិ */
+        @media (max-width: 768px) {
+            .products-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .products-section {
+                padding: 40px 20px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-item {
+                height: 350px;
+            }
+        }
+/*-----------------------------------ផ្នែកទី៣----------------------------*/
+/* --- រចនាបថផ្នែកអំពីយើង (About Section) --- */
+.about-section {
+    background-color: #fafafa; /* ពណ៌ផ្ទៃក្រោយប្រផេះស្រាលបន្តិចដើម្បីឱ្យដាច់ផ្នែក */
+    padding: 100px 80px;
+    color: #000000;
+}
+
+/* រៀបចំប្លង់ចែកជា ២ ជួរ (ឆ្វេងរូបភាព - ស្តាំអត្ថបទ) */
+.about-container {
+    display: table;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image-box, .about-content {
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+}
+
+/* តុបតែងប្រអប់រូបភាពខាងឆ្វេង */
+.about-image-box {
+    padding-right: 60px;
+}
+
+.about-image-box img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover; /* កាត់តម្រឹមរូបភាពឱ្យស្អាតសមល្មមប្រអប់ */
+    border-radius: 4px;
+}
+
+/* តុបតែងអត្ថបទខាងស្តាំ */
+.about-content {
+    padding-left: 20px;
+}
+
+.about-content .sub-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d99333; /* ពណ៌លឿងទុំជាចំណុចទាក់ទាញ */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.about-title {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444444;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+/* តុបតែងបញ្ជីចំណុចពិសេស (Features) */
+.features-list {
+    display: block;
+}
+
+.feature-item {
+    display: table;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.feature-icon {
+    display: table-cell;
+    width: 40px;
+    font-size: 24px;
+    color: #d99333;
+    vertical-align: top;
+    padding-top: 2px;
+}
+
+.feature-text {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.feature-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.feature-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555555;
+}
+
+/* រៀបចំឱ្យដំណើរការស្អាតលើអេក្រង់ទូរស័ព្ទ (Responsive) */
+@media (max-width: 992px) {
+    .about-section {
+        padding: 60px 20px;
+    }
+    .about-container, .about-image-box, .about-content {
+        display: block;
+        width: 100%;
+    }
+    .about-image-box {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    .about-image-box img {
+        height: 380px;
+    }
+    .about-content {
+        padding-left: 0;
+    }
+    .about-title {
+        font-size: 30px;
+    }
+}
