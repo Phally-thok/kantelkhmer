@@ -7,62 +7,102 @@
 }
 
 body {
-    background-color: #d99333; /* ពណ៌លឿងទុំដូចក្នុងរូបភាព */
+    background-color: #d8cab5; /* ពណ៌លឿងទុំដូចក្នុងរូបភាព */
     color: #000000;
 }
 
-/* --- រចនាបថរបារម៉ឺនុយ (Navbar) --- */
-/* --- រចនាបថរបារម៉ឺនុយ (Navbar) - កំណត់ឱ្យនៅនឹងថ្កល់ដដែល --- */
+/* --- រចនាបថរបារម៉ឺនុយ (Navbar) សម្រាប់កុំព្យូទ័រ - បង្ខំឱ្យរត់មួយជួរស្អាត --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 80px;
     
-    /* ផ្នែកសំខាន់៖ ធ្វើឱ្យ Navbar កកជាប់នៅខាងលើបង្អស់ */
+    /* កាត់បន្ថយគម្លាតលើក្រោមឆ្វេងស្តាំបន្តិច ដើម្បីកុំឱ្យហៀរជួរ */
+    padding: 12px 40px; 
+    
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* ធានាថា Navbar ស្ថិតនៅលើគេបង្អស់ មិនត្រូវរូបភាពបាំង */
+    z-index: 1000;
+    background-color: rgba(217, 147, 51, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     
-    /* បន្ថែមពណ៌ផ្ទៃក្រោយបន្តិច ឬប្រើស្ទើរតែធ្លាយ ដើម្បីឱ្យមើលឃើញអក្សរច្បាស់ពេលអូសចុះក្រោម */
-    background-color: rgba(202, 215, 25, 0.725); /* ពណ៌លឿងទុំ ដិត ៩៥% */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* បន្ថែមស្រមោលតិចៗពីក្រោម */
+    /* គន្លឹះសំខាន់៖ បង្ខំឱ្យរាយផ្ដេកមួយជួរដាច់ខាត ហាមធ្លាក់ជួរ */
+    flex-wrap: nowrap !important; 
 }
 
 .navbar .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #000000;
+    white-space: nowrap; /* ហាមឈ្មោះហាងដាច់ធ្លាក់ជួរ */
+    flex-shrink: 0;
 }
 
 .navbar .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px; /* ចន្លោះរវាងម៉ឺនុយនីមួយៗ */
+    
+    /* បន្ថយចន្លោះរវាងម៉ឺនុយនីមួយៗពី 30px មកត្រឹម 15px ឬ 20px ដើម្បីឱ្យសល់កន្លែងគ្រាន់ */
+    gap: 18px; 
+    
+    flex-wrap: nowrap !important; /* ហាមម៉ឺនុយបត់ជួរចុះក្រោម */
 }
 
 .navbar .nav-links a {
     text-decoration: none;
     color: #000000;
-    font-size: 16px;
-    transition: color 0.3s;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    
+    /* គម្លាតខាងក្នុង៖ លើក្រោម 6px និង ឆ្វេងស្តាំ 15px សម្រាប់ត្រៀមចេញរាងមូល */
+    padding: 5px 8px !important; 
+    
+    /* កំណត់ឱ្យចេញរាងមូលដែរ ពេលធម្មតាមិនទាន់ឃើញពណ៌ទេ */
+    border-radius: 30px; 
+    
+    /* ធ្វើឱ្យពេលម៉ៅដាក់ពីលើ រលាយពណ៌ចេញមករលូនស្រទន់ */
+    transition: all 0.3s ease;
 }
 
 .navbar .nav-links a:hover {
-    color: #9e2142;
+    background-color: #f5efef; 
+    color: #0f0f0e;
+    
 }
 
-/* ប៊ូតុង "ទិញឥឡូវ" នៅលើ Navbar */
+/* ប៊ូតុង "ទិញឥឡូវ" និងប៊ូតុងផ្សេងទៀតនៅលើ Navbar */
 .navbar .btn-buy {
     background-color: #000000;
-    color: #dfd6c9 !important; /* អក្សរពណ៌លឿងទុំវិញ */
-    padding: 8px 22px;
-    border-radius: 20px;
+    color: #d99333 !important;
+    padding: 8px 20px; 
+    border-radius: 30px;
     font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+/* ប៊ូតុងទិញឥឡូវ ពេលធម្មតា */
+.navbar .btn-buy {
+    background-color: #000000; /* ផ្ទៃពណ៌ខ្មៅ */
+    color: #d99333 !important; /* អក្សរពណ៌លឿង */
+    padding: 8px 20px; 
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    
+    /* ធ្វើឱ្យប៊ូតុងដូរពណ៌បែបស្រទន់ */
+    transition: all 0.3s ease; 
 }
 
+/* ពេលយកម៉ៅ (Mouse) ដាក់ពីលើប៊ូតុងទិញឥឡូវ */
+.navbar .btn-buy:hover {
+    background-color: #ffffff; /* ផ្ទៃប្ដូរទៅជាពណ៌ស */
+    color: #000000 !important; /* អក្សរប្ដូរទៅជាពណ៌ខ្មៅវិញ */
+    transform: scale(1.05); /* រីកធំបន្តិចថ្នមៗ */
+}
 /* --- រចនាបថផ្នែកកណ្ដាល (Hero Section) --- */
 .hero-section {
     display: flex;
@@ -281,27 +321,79 @@ body {
     line-height: 1.6;
     color: #555555;
 }
+/*-----------------------------------------------------------------*/
+/* ==========================================================================
+   កូដសម្រាប់ទូរស័ព្ទ៖ ឱ្យ Navbar រត់មួយជួរផ្ដេកស្អាត និងកកជាប់នៅលើគេដដែល
+   ========================================================================== */
 
-/* រៀបចំឱ្យដំណើរការស្អាតលើអេក្រង់ទូរស័ព្ទ (Responsive) */
-@media (max-width: 992px) {
-    .about-section {
-        padding: 60px 20px;
-    }
-    .about-container, .about-image-box, .about-content {
-        display: block;
+@media (max-width: 768px) {
+    
+    .navbar {
+        position: fixed; /* កកជាប់ខាងលើដដែល */
+        top: 0;
+        left: 0;
         width: 100%;
+        z-index: 1000;
+        
+        /* បង្រួមគម្លាតឱ្យខ្លីបំផុតដើម្បីសន្សំទំហំឆ្វេងស្តាំ */
+        padding: 8px 8px !important; 
+        
+        display: flex !important;
+        flex-direction: row !important; /* បង្ខំជួរដេក */
+        justify-content: space-between !important; /* រុញឡូហ្គោទៅឆ្វេង ម៉ឺនុយទៅស្តាំ */
+        align-items: center !important;
+        background-color: rgba(217, 147, 51, 0.98) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
-    .about-image-box {
-        padding-right: 0;
-        margin-bottom: 40px;
+
+    /* ឈ្មោះឡូហ្គោ "កន្ទេលផ្អាវ" */
+    .navbar .logo {
+        font-size: 13px !important; /* បង្រួមតូចល្មម */
+        font-weight: bold;
+        white-space: nowrap !important; /* ហាមដាច់ធ្លាក់ជួរដាច់ខាត */
+        flex-shrink: 0; /* មិនឱ្យប្រព័ន្ធបង្រួមរូបរាងឡូហ្គោ */
     }
-    .about-image-box img {
-        height: 380px;
+
+    /* ប្រអប់ផ្ទុកម៉ឺនុយ និងប៊ូតុងទាំងអស់ */
+    .navbar .nav-links {
+        display: flex !important;
+        flex-direction: row !important; /* បង្ខំជួរដេក */
+        align-items: center !important;
+        gap: 5px !important; /* បង្រួមចន្លោះឱ្យជិតគ្នាបំផុត */
+        flex-wrap: nowrap !important; /* គន្លឹះសំខាន់៖ ហាមបត់ជួរចុះក្រោមដាច់ខាត */
     }
-    .about-content {
-        padding-left: 0;
+
+    /* អក្សរម៉ឺនុយនីមួយៗ (ទំព័រដើម, អំពីកន្ទេលផ្អាវ, ផលិតផល...) */
+    .navbar .nav-links a {
+        font-size: 9px !important; /* បង្រួមអក្សរតូចដើម្បីឱ្យរត់គ្រាន់លើអេក្រង់ទូរស័ព្ទ */
+        padding: 2px 3px !important; /* គម្លាតស្តើងបំផុត */
+        white-space: nowrap !important; /* គន្លឹះសំខាន់៖ ហាមដាច់ធ្លាក់ជួរដាច់ខាត */
     }
-    .about-title {
-        font-size: 30px;
+
+    /* ប៊ូតុង "ទិញឥឡូវ" នៅលើ Navbar */
+    .navbar .btn-buy {
+        padding: 4px 6px !important; /* បង្រួមប្រអប់ប៊ូតុងឱ្យតូច */
+        font-size: 9px !important; /* អក្សរតូចស្មើគេ */
+        border-radius: 10px !important;
+        background-color: #000000;
+        color: #d99333 !important;
+        white-space: nowrap !important; /* ហាមធ្លាក់ជួរ */
+    }
+
+    /* ២. រុញខ្លឹមសារ Hero Section ចុះក្រោមដើម្បីកុំឱ្យ Navbar បាំង */
+    .hero-section {
+        padding-top: 65px !important; 
+        min-height: auto !important;
+        padding-bottom: 30px !important;
+    }
+
+    .hero-title {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+    }
+
+    .hero-description {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
     }
 }
